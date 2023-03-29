@@ -33,6 +33,11 @@ a {
         }
 
         .menu-icon {
+            @media (min-width: 768px){
+                display: none;
+            } 
+            
+
             .line {
                 background-color: $light-color;
                 width: 25px;
@@ -56,33 +61,40 @@ a {
                     &:last-child {
                         transform: rotate(-45deg) translate(5px, 0px);
                     }
-
                 }
             }
-
-        }
+        }}
 
         .menu-list {
             list-style: none;
             flex: 0 0 100%;
             display: none;
-
+            @media (min-width: 768px){
+                display: flex;
+                justify-content: space-between;
+                flex: 0 0 60%;
+            }
             &.active {
                 height: 100vh;
                 display: flex;
                 flex-wrap: wrap;
                 align-content: center;
-
+                @media (min-width: 768px){
+                    height: initial;
+                }
             }
 
             .menu-item {
                 flex: 0 0 100%;
                 text-align: center;
                 padding: 1rem 0;
+                @media (min-width: 768px){
+                    flex:0 0 auto;
+                    padding: 0;
+                }  
             }
         }
     }
-}
 
 section {
     height: 100vh;
